@@ -14,6 +14,6 @@ AppConfigUtility.init(app);
 app.use('/analysis', routes.analysisRoutes);
 
 // listen
-app.listen(process.env.SERVER_PORT, () => {
+app.listen(process.env.SERVER_PORT || (process.env.PORT || 8080), () => {
     console.log(`server listening on port ${process.env.SERVER_PORT}`);
 });
