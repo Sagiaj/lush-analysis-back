@@ -83,7 +83,7 @@ export class FirebaseService {
                     site: id,
                     visits: await (await ref.collection('dates')
                                 .where('dateTime', '>=', new Date(start))
-                                .where('dateTime', '<', new Date(end))
+                                .where('dateTime', '<', new Date(new Date(end).getTime() + 84600000))
                                 .get()
                             ).docs.map(doc => ({ date: doc.id, visits: doc.data().visits }))
                 })

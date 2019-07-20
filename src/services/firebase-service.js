@@ -194,7 +194,7 @@ var FirebaseService = /** @class */ (function () {
                                             };
                                             return [4 /*yield*/, ref.collection('dates')
                                                     .where('dateTime', '>=', new Date(start))
-                                                    .where('dateTime', '<', new Date(end))
+                                                    .where('dateTime', '<', new Date(new Date(end).getTime() + 84600000))
                                                     .get()];
                                         case 1: return [4 /*yield*/, (_c.sent()).docs.map(function (doc) { return ({ date: doc.id, visits: doc.data().visits }); })];
                                         case 2: return [2 /*return*/, (_b.visits = _c.sent(),
